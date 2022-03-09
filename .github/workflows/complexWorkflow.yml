@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print date
-      - run: date
+      - run: echo "ABC"
   job2:
    name: second job 
    runs-on: windows-latest
@@ -21,7 +21,7 @@ jobs:
    runs-on: macos-latest
    steps:
       - name: print date
-      - run:  date
+      - run: date
   job4:
    name: fourth job
    need: [job1,job2,job3]
