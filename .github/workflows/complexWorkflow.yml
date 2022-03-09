@@ -1,0 +1,28 @@
+name: complex-workflow 
+
+on: [push]
+
+jobs: 
+   job1:
+    name: first job 
+    runs-on: ubuntu-latest
+    steps:
+      - name: print date
+        run: date
+  job2:
+   name: second job 
+   runs-on: windows-latest
+   steps:
+      - name: print date
+        run: "Get-Date -DisplayHint Date"
+   
+  job3:
+   name: third job
+   runs-on: macos-latest
+   steps:
+      - name: print date
+        run:  date
+  job4:
+   name: fourth job
+   runs-on: ubuntu-latest
+   need: [job1,job2,job3]
