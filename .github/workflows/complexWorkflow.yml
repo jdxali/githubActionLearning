@@ -16,14 +16,14 @@ jobs:
       - name: print date
       - run: "Get-Date -DisplayHint Date"
    
-  job3:
-   name: third job
-   runs-on: macos-latest
-   steps:
+   job3:
+    name: third job
+    runs-on: macos-latest
+    steps:
       - name: print date
       - run: date
-  job4:
-   name: fourth job
-   need: [job1,job2,job3]
-   runs-on: ubuntu-latest
+   job4:
+    name: fourth job
+    needs: [job1,job2,job3]
+    runs-on: ubuntu-latest
    
