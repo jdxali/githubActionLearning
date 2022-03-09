@@ -7,26 +7,31 @@ jobs:
     name: first job 
     runs-on: ubuntu-latest
     steps:
-      - name: print date
-      - run: echo "ABC"
-  job2:
-   name: second job 
-   runs-on: windows-latest
-   steps:
-      - name: print date
+      - run: date
+   job2:
+    name: second job 
+    runs-on: windows-latest
+    steps:
       - run: "Get-Date -DisplayHint Date"
    
-  job3:
-   name: third job
-   runs-on: macos-latest
-   steps:
+   job3:
+    name: third job
+    runs-on: macos-latest
+    steps:
+     - run: date
+   job4:
+    name: fourth job
+    needs: [job1,job2,job3]
+    runs-on: ubuntu-latest
+    steps:
+      - run: date
+   job4:
+    name: fourth job
+    need: [job1,job2,job3]
+    runs-on: ubuntu-latest
+    steps:
       - name: print date
       - run: date
-  job4:
-   name: fourth job
-   need: [job1,job2,job3]
-   runs-on: ubuntu-latest
-   steps:
-      - name: print date
-      - run: date
+
+
    
