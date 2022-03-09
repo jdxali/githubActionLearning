@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print date
-      - run: echo "ABC"
-  job2:
-   name: second job 
-   runs-on: windows-latest
-   steps:
+      - run: date
+   job2:
+    name: second job 
+    runs-on: windows-latest
+    steps:
       - name: print date
       - run: "Get-Date -DisplayHint Date"
    
