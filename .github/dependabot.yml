@@ -5,8 +5,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      
+
   - package-ecosystem: "docker"
-    directory: "/source/"
+    directory: "/Source/"
     schedule:
       interval: "daily"
