@@ -16,7 +16,8 @@ jobs:
                env | sort
                echo $TEST
                docker build -t hello ./Source/
-               docker run --rm hello -e TEST2=$TEST -c "echo $TEST2"
+               docker exec -ti hello:latest sh -c "echo a && echo b"
+         
           
    job2:
       name: second job
