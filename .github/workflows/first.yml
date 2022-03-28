@@ -15,7 +15,7 @@ jobs:
           run: |
                env | sort
                echo $TEST
-               docker run hello-world -c "env | sort"
+               docker run -it ubuntu bash
           
    job2:
       name: second job
