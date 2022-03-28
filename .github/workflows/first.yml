@@ -10,7 +10,8 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two 
-          env: TEST:"HELLO"
+          env: 
+              TEST: HELLO
           run: |
                env | sort
                echo $TEST
