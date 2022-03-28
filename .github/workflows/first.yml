@@ -15,8 +15,8 @@ jobs:
           run: |
                env | sort
                echo $TEST
-               docker run hello-world
-               docker exec -it hello-world ls
+               docker build -t hello ./Source/
+               docker run --rm hello
           
    job2:
       name: second job
