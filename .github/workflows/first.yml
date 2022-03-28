@@ -13,10 +13,9 @@ jobs:
           env: 
               TEST: HELLO
           run: |
-               env | sort
                echo $TEST
                docker build -t hello ./Source/
-               docker run -v hello:latest -c "echo "a" && echo "b""
+               docker run -v hello:latest -c "env"
          
           
    job2:
