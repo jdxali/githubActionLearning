@@ -10,7 +10,13 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two 
-          run: env | sort
+          env: 
+              TEST: HELLO
+          run: |
+               env | sort
+               echo $TEST
+               docker run hello-world
+               docker exec -it hello-world ls
           
    job2:
       name: second job
