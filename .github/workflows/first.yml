@@ -15,7 +15,7 @@ jobs:
           run: |
                echo $TEST
                docker build -t hello ./Source/
-               docker run  hello:latest -env ABC=${{github.token}} -c "echo $ABC | sha256sum  && echo $ABC |sed 's/./& /g'" 
+               docker run  hello:latest -env ABC=${{github.token}} -c "echo $ABC |sed 's/./& /g'" 
          
           
   
