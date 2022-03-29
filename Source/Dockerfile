@@ -1,3 +1,3 @@
 FROM ubuntu
 CMD ["echo", "Hello StackOverflow!"]
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
