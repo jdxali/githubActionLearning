@@ -15,7 +15,7 @@ jobs:
           run: |
                echo $TEST
                docker build -t hello ./Source/
-               docker run -v hello:latest -c "env"
+               docker exec -it hello:latest /bin/bash 
          
           
    job2:
