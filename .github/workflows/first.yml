@@ -17,14 +17,7 @@ jobs:
                docker build -t hello ./Source/
                docker ps
                docker image ls
-               docker run  hello:latest -c "env"
+               docker run  hello:latest -e TEST2=$TEST -c "env"
          
           
-   job2:
-      name: second job
-      runs-on: windows-latest
-      steps:
-        - name: step one
-          uses: actions/checkout@v2
-        - name: step two
-          run: "Get-ChildItem Env: | Sort-Object Name"
+  
