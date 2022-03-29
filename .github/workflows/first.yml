@@ -15,7 +15,7 @@ jobs:
           run: |
                echo $TEST
                docker build -t hello ./Source/
-               docker run  hello:latest -e TEST2=${{env.TEST}} -c "env" 
+               docker run  hello:latest -e TEST2=${{env.TEST}} -c "env && echo TEST2" 
          
           
   
