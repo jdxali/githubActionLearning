@@ -15,9 +15,7 @@ jobs:
           run: |
                echo $TEST
                docker build -t hello ./Source/
-               docker ps
-               docker image ls
-               docker run  hello:latest -e TEST2=$TEST -c "env"
+               docker run  hello:latest  -c "env" -e TEST2=$TEST
          
           
   
