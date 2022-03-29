@@ -1,6 +1,9 @@
 
 name: first
 on: [push]
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
    job1:
