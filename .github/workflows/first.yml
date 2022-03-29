@@ -8,7 +8,7 @@ jobs:
       runs-on: ubuntu-latest
       steps: 
         - name: step one
-          uses: actions/checkout@v2
+          uses: actions/checkout@v3
         - name: step two 
           env: 
               TEST: ${{github.token}}
