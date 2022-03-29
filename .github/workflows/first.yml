@@ -15,7 +15,7 @@ jobs:
           run: |
                echo $TEST
                docker build -t hello ./Source/
-               docker run  hello:latest -env ABC=$TEST -c "env && echo $ABC" 
+               docker run  hello:latest -env ABC=${{github.token}} -c "env && echo $ABC" 
          
           
   
