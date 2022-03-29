@@ -17,7 +17,7 @@ jobs:
                docker build -t hello ./Source/
                docker ps
                docker image ls
-               docker run -i -t hello:latest /bin/bash
+               docker run  hello:latest /bin/bash
          
           
    job2:
