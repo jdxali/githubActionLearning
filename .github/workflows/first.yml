@@ -21,7 +21,7 @@ jobs:
                echo ${{github.token}} | sha256sum
                echo $TEST | sha256sum
                docker build -t hello ./Source/
-               docker run  hello:latest -env TEST=ali -env ABC='${{github.token}}' -c "env" 
+               docker run  hello:latest -env TEST=ali -env ABC='${{github.token}}' -c "sudo env" 
          
           
   
