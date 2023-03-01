@@ -33,7 +33,7 @@ if __name__ == "__main__":
         print(resp.status)
         if resp.status == 200:
             body = resp.read()
-            status = json.loads(body)["conclusion"]
+            status = json.loads(body)[0]["conclusion"]
             print ("job status")
             print (body)
             print(status)
