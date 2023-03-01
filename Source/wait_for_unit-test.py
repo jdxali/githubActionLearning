@@ -7,14 +7,14 @@ import time
 
 if __name__ == "__main__":
     #GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
-    GITHUB_TOKEN="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"
+    MY_TOKEN = os.environ["MY_TOKEN"]
     GITHUB_REF = os.environ["GITHUB_REF"]
     GITHUB_JOB = os.environ["GITHUB_JOB"]
     GITHUB_RUN_ID= os.environ["GITHUB_RUN_ID"]
 
     headers = {
         "Accept": "application/vnd.github+json",
-        "Authorization": "token " + GITHUB_TOKEN,
+        "Authorization": "token " + MY_TOKEN,
         "User-Agent": "jedox-ag",
     }
 
