@@ -12,7 +12,7 @@ jobs:
         - name: step two 
           env: 
               TEST: HELLO
-          run:  python
+          run:  python -h 
                
           
    job2:
