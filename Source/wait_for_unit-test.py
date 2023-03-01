@@ -26,7 +26,7 @@ if __name__ == "__main__":
     check_status = True
     while check_status:
         conn = http.client.HTTPSConnection("api.github.com")
-        conn.request("GET", "/repos/jedox-ag/olap/actions/runs/"+GITHUB_RUN_ID+"/jobs", None, headers)
+        conn.request("GET", "/repos/jdxali/githubActionLearning/actions/runs/" +GITHUB_RUN_ID +"/jobs", None, headers)
         resp = conn.getresponse()
         body = resp.read()
         print(body)
