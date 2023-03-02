@@ -33,5 +33,5 @@ if __name__ == "__main__":
                       check_status =False
                    if job["conclusion"] == "failure":
                        print("unit test job failed")
-                       quit()
+                       os._exit(1)
         time.sleep(5)
