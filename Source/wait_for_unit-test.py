@@ -3,6 +3,7 @@ import json
 import os
 import ssl
 import time
+import sys
 
 
 if __name__ == "__main__":
@@ -11,7 +12,9 @@ if __name__ == "__main__":
     GITHUB_REF = os.environ["GITHUB_REF"]
     GITHUB_JOB = os.environ["GITHUB_JOB"]
     GITHUB_RUN_ID= os.environ["GITHUB_RUN_ID"]
+    JOB_NAME = sys.argv[1]
 
+    print(JOB_NAME)
     headers = {
         "Accept": "application/vnd.github+json",
         "Authorization": "token " + MY_TOKEN,
@@ -27,7 +30,7 @@ if __name__ == "__main__":
         if resp.status == 200:
             jobs = json.loads(body)["jobs"]
             for job in jobs:
-                if job["name"] == "second job":
+                if job["name"] == JOB_NAME:
                    print (job["status"])
                    if job["conclusion"] == "success":
                       check_status =False

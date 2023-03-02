@@ -25,4 +25,4 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two
-          run: python ./Source/wait.py
+          run: python ./Source/wait.py 'second job'
