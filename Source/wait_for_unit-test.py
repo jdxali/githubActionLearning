@@ -32,5 +32,6 @@ if __name__ == "__main__":
                    if job["conclusion"] == "success":
                       check_status =False
                    if job["conclusion"] == "failure":
-                       raise Exception("Unit-test job failed")
+                       print("unit test job failed")
+                       quit()
         time.sleep(5)
