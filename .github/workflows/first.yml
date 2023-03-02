@@ -15,7 +15,7 @@ jobs:
            GITHUB_REF: ${{ github.ref }}
            GITHUB_RUN_ID: ${{ github.GITHUB_RUN_ID }}
            GITHUB_JOB: ${{ github.GITHUB_JOB }}
-          run:  python ./Source/wait_for_unit-test.py
+          run:  python ./Source/wait_for_unit-test.py  "second job"
                
           
    job2:
@@ -25,4 +25,4 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two
-          run: python ./Source/wait.py 'second job'
+          run: python ./Source/wait.py
