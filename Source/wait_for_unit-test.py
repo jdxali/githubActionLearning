@@ -25,6 +25,7 @@ if __name__ == "__main__":
         conn.request("GET", "/repos/jdxali/githubActionLearning/actions/runs/" +GITHUB_RUN_ID +"/jobs", None, headers)
         resp = conn.getresponse()
         body = resp.read()
+        print(body)
         if resp.status == 200:
             jobs = json.loads(body)["jobs"]
             for job in jobs:
