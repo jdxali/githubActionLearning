@@ -12,7 +12,7 @@ if __name__ == "__main__":
     GITHUB_REF = os.environ["GITHUB_REF"]
     GITHUB_JOB = os.environ["GITHUB_JOB"]
     GITHUB_RUN_ID= os.environ["GITHUB_RUN_ID"]
-    JOB_NAME = sys.argv[1]
+    JOB_NAME = "second job"
 
     print(JOB_NAME)
     headers = {
