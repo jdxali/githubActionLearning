@@ -13,7 +13,6 @@ if __name__ == "__main__":
     GITHUB_JOB = os.environ["GITHUB_JOB"]
     GITHUB_RUN_ID= os.environ["GITHUB_RUN_ID"]
 
-    print(JOB_NAME)
     headers = {
         "Accept": "application/vnd.github+json",
         "Authorization": "token " + MY_TOKEN,
