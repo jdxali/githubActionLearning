@@ -16,7 +16,7 @@ if __name__ == "__main__":
     headers = {
         "Accept": "application/vnd.github+json",
         "Authorization": "token " + MY_TOKEN,
-        "User-Agent": "test_ag",
+        "User-Agent": "jedox_ag",
         "body" : "Great stuff!"
     }
  
