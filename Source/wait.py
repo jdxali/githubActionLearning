@@ -17,7 +17,7 @@ if __name__ == "__main__":
         "Accept": "application/vnd.github+json",
         "Authorization": "token " + MY_TOKEN,
         "User-Agent": "jedox_ag",
-        "body" : "Great stuff!"
+        "body" : "Great stuff!",
     }
  
     conn = http.client.HTTPSConnection("api.github.com")
