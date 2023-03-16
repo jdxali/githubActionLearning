@@ -21,7 +21,7 @@ if __name__ == "__main__":
     }
  
     conn = http.client.HTTPSConnection("api.github.com")
-    conn.request("POST", "/repos/jdxali/githubActionLearning/pulls/5/comments", None, headers)
+    conn.request("POST", "/repos/jdxali/githubActionLearning/issues/issue-1627522244/comments", None, headers)
     resp = conn.getresponse()
     body = resp.read()
     print(body)
