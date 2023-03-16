@@ -5,8 +5,14 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-
+    assignees:
+      - "jdxali"
+#check for docker update
   - package-ecosystem: "docker"
     directory: "/Source/"
     schedule:
       interval: "daily"
+    assignees:
+      - "jdxali"
+      - ""
+    
