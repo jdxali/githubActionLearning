@@ -10,14 +10,11 @@ if __name__ == "__main__":
     #GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
     MY_TOKEN = os.environ["MY_TOKEN"]
     GITHUB_REF = os.environ["GITHUB_REF"]
-    GITHUB_JOB = os.environ["GITHUB_JOB"]
-    GITHUB_RUN_ID= os.environ["GITHUB_RUN_ID"]
     GIT_EVENT_NAME = os.environ["GITHUB_EVENT_NAME"]
 
-    print (GITHUB_REF)
-    print(GIT_EVENT_NAME)
-    print (os.environ["GITHUB_REF_NAME"])
-    
+
+    x = os.environ["GITHUB_REF_NAME"].split("/")
+    print(x[0])
 
     headers = {
         "Accept": "application/vnd.github+json",
