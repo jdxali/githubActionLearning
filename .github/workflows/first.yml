@@ -13,6 +13,7 @@ jobs:
    job1:
       name: first job
       runs-on: ubuntu-latest
+      permissions: write-all
       steps: 
         - name: step one
           uses: actions/checkout@v2
@@ -22,7 +23,7 @@ jobs:
            GITHUB_REF: ${{ github.ref }}
            GITHUB_RUN_ID: ${{ github.GITHUB_RUN_ID }}
            GITHUB_JOB: ${{ github.GITHUB_JOB }}
-          run:  python ./Source/wait_for_unit-test.py  "second job"
+          run: python ./Source/wait.py
                
           
    job2:
@@ -32,4 +33,4 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two
-          run: python ./Source/wait.py
+          run: echo "2"
