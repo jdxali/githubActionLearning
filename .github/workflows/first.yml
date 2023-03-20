@@ -17,10 +17,11 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two 
+          if: github.event_name == 'issue_comment'
           env: 
            GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
           run:  |
-            gh pr comment ${{ github.event.issue.number }} --body "Build svs:pr.${{ github.event.issue.number }} using client_libs tag $CLIBS_TAG is ready."
+            gh pr comment ${{ github.event.issue.number }} --body "test comment"
                
           
    job2:
