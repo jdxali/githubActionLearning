@@ -23,7 +23,7 @@ jobs:
           run:  |
            chmod +x ./Source/branch_name.sh
            ./Source/branch_name.sh -i
-           echo "${{env.TOKEN_NUM}}"
+           echo ${{env.TOKEN_NUM}}
                
           
    job2:
