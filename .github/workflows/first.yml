@@ -17,6 +17,7 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two 
+          if: github.event_name == 'issue_comment'
           env: 
            MY_TOKEN: ${{ secrets.MY_TOKEN }}
            GITHUB_REF_HEAD: ${{ github.head_ref }}
@@ -24,7 +25,6 @@ jobs:
            chmod +x ./Source/branch_name.sh
            ./Source/branch_name.sh
            echo "${TICKET_NUM}"
-               
           
    job2:
       name: second job
@@ -34,3 +34,4 @@ jobs:
           uses: actions/checkout@v2
         - name: step two
           run: echo "123"
+
