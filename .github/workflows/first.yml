@@ -21,7 +21,7 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
            GITHUB_REF_HEAD: ${{ github.head_ref }}
           run:  |
-           chmod +x ./Source/gha_build.sh
+           chmod +x ./Source/branch_name.sh
            ./Source/branch_name.sh -i
            echo "${TOKEN_NUM}"
                
