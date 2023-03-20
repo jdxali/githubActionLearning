@@ -17,11 +17,13 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two 
-          if: github.event_name == 'issue_comment'
           env: 
            GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+           GITHUB_REF_HEAD: ${{ github.head_ref }}
           run:  |
-            gh pr comment ${{ github.event.issue.number }} --body "test comment"
+           chmod -x ./Source/branch_name.sh
+           ./Source/branch_name.sh -i
+           echo "${TOKEN_NUM}"
                
           
    job2:
