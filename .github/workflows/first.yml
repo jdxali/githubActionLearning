@@ -18,11 +18,9 @@ jobs:
           uses: actions/checkout@v2
         - name: step two 
           env: 
-           MY_TOKEN: ${{ secrets.MY_TOKEN }}
-           GITHUB_REF: ${{ github.ref }}
-           GITHUB_RUN_ID: ${{ github.GITHUB_RUN_ID }}
-           GITHUB_JOB: ${{ github.GITHUB_JOB }}
-          run:  python ./Source/wait.py
+           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+          run:  |
+            gh pr comment ${{ github.event.issue.number }} --body "Build svs:pr.${{ github.event.issue.number }} using client_libs tag $CLIBS_TAG is ready."
                
           
    job2:
@@ -32,4 +30,4 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two
-          run: python ./Source/wait.py
+          run: echo "123"
