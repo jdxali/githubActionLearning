@@ -23,7 +23,7 @@ jobs:
           run:  |
            chmod +x ./Source/branch_name.sh
            ./Source/branch_name.sh -i
-           echo ${{env.TICKET_NUM}}
+           echo $TICKET_NUM
                
           
    job2:
