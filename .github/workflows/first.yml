@@ -19,10 +19,11 @@ jobs:
         - name: step two 
           env: 
            MY_TOKEN: ${{ secrets.MY_TOKEN }}
-           GITHUB_REF: ${{ github.ref }}
-           GITHUB_RUN_ID: ${{ github.GITHUB_RUN_ID }}
-           GITHUB_JOB: ${{ github.GITHUB_JOB }}
-          run:  python ./Source/wait.py
+           GITHUB_REF_HEAD: ${{ github.head_ref }}
+          run: |
+           chmod +x ./Source/branch_name.sh
+           ./Source/branch_name.sh
+           echo "${TICKET_NUM}"
                
           
    job2:
