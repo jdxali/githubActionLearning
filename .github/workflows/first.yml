@@ -20,10 +20,11 @@ jobs:
           env: 
            GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
            GITHUB_REF_HEAD: ${{ github.head_ref }}
+           AHA_TICKET_NUM: ""
           run:  |
            chmod +x ./Source/branch_name.sh
            ./Source/branch_name.sh -i
-           echo ${env.TICKET_NUM}
+           echo $AHA_TICKET_NUM
                
           
    job2:
