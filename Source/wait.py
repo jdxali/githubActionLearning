@@ -10,13 +10,11 @@ if __name__ == "__main__":
     #GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
     MY_TOKEN = os.environ["MY_TOKEN"]
     GITHUB_REF = os.environ["GITHUB_REF"]
-    GITHUB_JOB = os.environ["GITHUB_JOB"]
-    GITHUB_RUN_ID= os.environ["GITHUB_RUN_ID"]
     GIT_EVENT_NAME = os.environ["GITHUB_EVENT_NAME"]
 
-    print (GITHUB_REF)
-    print(GIT_EVENT_NAME)
-    
+
+    PR_ID = os.environ["GITHUB_REF_NAME"].split("/")[0]
+   
 
     headers = {
         "Accept": "application/vnd.github+json",
@@ -28,7 +26,7 @@ if __name__ == "__main__":
     json_data = json.dumps(data)
  
     conn = http.client.HTTPSConnection("api.github.com")
-    conn.request("POST", "/repos/jdxali/githubActionLearning/issues/5/comments", json_data, headers) 
+    conn.request("POST", "/repos/jdxali/githubActionLearning/issues/"+ PR_ID +"/comments", json_data, headers) 
     resp = conn.getresponse()
     body = resp.read()
     print(resp.status)
