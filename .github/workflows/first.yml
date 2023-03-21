@@ -13,11 +13,11 @@ jobs:
    job1:
       name: first job
       runs-on: ubuntu-latest
-      if:  github.event_name  == "pull_request"  &&   github.event.action == "opened" 
       steps: 
         - name: step one
           uses: actions/checkout@v2
         - name: step two 
+          if: github.event_name  == 'pull_request' && github.event.action == 'opened' 
           env: 
            GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
            GITHUB_REF_HEAD: ${{ github.head_ref }}
