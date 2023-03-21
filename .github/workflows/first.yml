@@ -2,7 +2,7 @@
 name: first
 on:
   pull_request:
-    # Sequence of patterns matched against refs/heads
+    types: [opened, synchronize, reopened, labeled]
     branches:    
       - main
   push:
