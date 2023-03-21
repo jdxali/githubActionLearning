@@ -17,7 +17,6 @@ jobs:
         - name: step one
           uses: actions/checkout@v2
         - name: step two 
-          if: github.event_name  == 'pull_request' && github.event.action == 'opened' 
           env: 
            GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
            GITHUB_HEAD_REF: ${{ github.head_ref }}
