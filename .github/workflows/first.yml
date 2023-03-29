@@ -21,7 +21,7 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
            GITHUB_HEAD_REF: ${{ github.head_ref }}
           run:  |
-               python3 /Source/wait_for_unit-test.py
+               python3 ./Source/wait_for_unit-test.py
                echo $ARTIFACT_ID
                
           
