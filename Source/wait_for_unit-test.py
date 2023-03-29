@@ -38,7 +38,7 @@ if __name__ == "__main__":
                        os._exit(1)
         time.sleep(5)
     
-    conn.request("GET", "/repos/jdxali/githubActionLearning/actions/runs/" +GITHUB_RUN_ID +"/artifacts", None, headers)
+    conn.request("GET", "/repos/jdxali/githubActionLearning/actions/artifacts", None, headers)
     resp = conn.getresponse()
     body = resp.read()
     print(body)
