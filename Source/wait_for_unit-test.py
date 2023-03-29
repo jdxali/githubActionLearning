@@ -20,8 +20,8 @@ if __name__ == "__main__":
     }
  
     check_status = True
+    conn = http.client.HTTPSConnection("api.github.com")
     while check_status:
-        conn = http.client.HTTPSConnection("api.github.com")
         conn.request("GET", "/repos/jdxali/githubActionLearning/actions/runs/" +GITHUB_RUN_ID +"/jobs", None, headers)
         resp = conn.getresponse()
         body = resp.read()
@@ -37,3 +37,14 @@ if __name__ == "__main__":
                        print("unit test job failed")
                        os._exit(1)
         time.sleep(5)
+    
+    conn.request("GET", "/repos/jdxali/githubActionLearning/actions/runs/" +GITHUB_RUN_ID +"/jobs", None, headers)
+    resp = conn.getresponse()
+    body = resp.read()
+    print(body)
+    if resp.status == 200:
+       artifacts = json.loads(body)["artifacts"]
+       for artifact in artifacts:
+            if artifact["name"] == "file":
+              print (artifact["id"])
+              os.environ["ARTIFACT_ID"] = artifact["id"]
