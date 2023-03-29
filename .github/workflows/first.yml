@@ -18,7 +18,7 @@ jobs:
           uses: actions/checkout@v2
         - name: step two 
           env: 
-           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+           MY_TOKEN: ${{ secrets.MY_TOKEN }}
            GITHUB_HEAD_REF: ${{ github.head_ref }}
           run:  |
                python3 ./Source/wait_for_unit-test.py
