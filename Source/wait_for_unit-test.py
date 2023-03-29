@@ -38,13 +38,16 @@ if __name__ == "__main__":
                        os._exit(1)
         time.sleep(5)
     
-    conn.request("GET", "/repos/jdxali/githubActionLearning/actions/artifacts", None, headers)
-    resp = conn.getresponse()
-    body = resp.read()
-    print(body)
-    if resp.status == 200:
-       artifacts = json.loads(body)["artifacts"]
-       for artifact in artifacts:
-            if artifact["name"] == "file":
-              print (artifact["id"])
-              os.environ["ARTIFACT_ID"] = artifact["id"]
+    while (True):
+        conn.request("GET", "/repos/jdxali/githubActionLearning/actions/runs/" +GITHUB_RUN_ID +"/artifacts", None, headers)
+        resp = conn.getresponse()
+        body = resp.read()
+        print(body)
+        if resp.status == 200:
+            artifacts = json.loads(body)["artifacts"]
+            if len(artifacts) != 0:
+             for artifact in artifacts:
+                if artifact["name"] == "file":
+                    print (artifact["id"])
+                    os.environ["ARTIFACT_ID"] = str(artifact["id"])
+                    break
